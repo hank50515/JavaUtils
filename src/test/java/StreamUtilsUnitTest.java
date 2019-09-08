@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class StreamUtilsUnitTest {
 
     @Test
-    public void distinct(){
+    public void distinct() {
 
         User user = new User(1, "ray");
         User user2 = new User(2, "ray2");
@@ -16,22 +16,24 @@ public class StreamUtilsUnitTest {
 
         List<User> users = Lists.newArrayList(user, user2, user3);
 
-        users = users.stream().filter(StreamUtils.distinctByKey(User::getId)).collect(Collectors.toList());
+        users = users.stream()
+                .filter(StreamUtils.distinctByKey(User::getId))
+                .collect(Collectors.toList());
 
         Assert.assertEquals(Lists.newArrayList(user, user2), users);
     }
 
-    public class User{
+    public class User {
         Integer id;
 
         String name;
 
-        public User(Integer id, String name){
+        public User(Integer id, String name) {
             this.id = id;
             this.name = name;
         }
 
-        public Integer getId(){
+        public Integer getId() {
             return this.id;
         }
     }
