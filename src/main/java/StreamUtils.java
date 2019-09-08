@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class streamUtils {
+public class StreamUtils {
     /**
      * Filter same value by stream filter
      * e.g.
